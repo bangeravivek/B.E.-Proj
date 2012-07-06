@@ -1,0 +1,19 @@
+image=imread('cameraman.tif');
+[ca1 ch1 cv1 cd1]=dwt2(image,'haar');
+[ca2 ch2 cv2 cd2]=dwt2(ca1,'haar');
+[ca3 ch3 cv3 cd3]=dwt2(ca2,'haar');
+
+figure, imshow(ca1);
+figure, imshow(ca2);
+figure, imshow(ca3);
+
+[cre3_a rec3_a]=SOFM(ca3);
+[cre3_a rec3_a]=SOFM(ch3);
+[cre3_a rec3_a]=SOFM(cv3);
+[cre3_a rec3_a]=SOFM(cd3);
+[cre3_a rec3_a]=SOFM(ch2);
+[cre3_a rec3_a]=SOFM(cv2);
+[cre3_a rec3_a]=SOFM(cd2);
+[cre3_a rec3_a]=SOFM(ch2);
+[cre3_a rec3_a]=SOFM(cv1);
+[cre3_a rec3_a]=SOFM(c3);
